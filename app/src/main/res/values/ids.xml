@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btnEnterExam" type="id" />
+    <item name="lottieAnimationView" type="id" />
+    <item name="tlBaseUrl" type="id" />
+    <item name="tlToken" type="id" />
+    <item name="tlUserId" type="id" />
+    <item name="tlQuizId" type="id" />
+    <item name="tlBaseUrlImageAndVideo" type="id" />
+    <item name="resultQuizFragment" type="id" />
+    <item name="btnClozeTest" type="id" />
+    <item name="btnEnterTest" type="id" />
+    <item name="btnEnterCloze" type="id" />
+</resources>

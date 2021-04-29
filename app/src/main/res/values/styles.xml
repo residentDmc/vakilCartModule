@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="errorTextAppearance">@style/error_appearance</item>
+    </style>
+
+    <style name="error_appearance" parent="@android:style/TextAppearance">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TypeEditText" parent="ThemeOverlay.MaterialComponents.TextInputEditText">
+        <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
+</resources>

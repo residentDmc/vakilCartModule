@@ -1,0 +1,3 @@
+include ':BarExamlibrary'
+include ':app'
+rootProject.name = "BarExamApplication"

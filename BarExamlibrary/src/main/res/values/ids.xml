@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="rcCategory" type="id" />
+    <item name="toolbar" type="id" />
+    <item name="lnParent" type="id" />
+    <item name="txtTitle" type="id" />
+    <item name="rcTest" type="id" />
+    <item name="txtDescription" type="id" />
+    <item name="txtQuestionCount" type="id" />
+    <item name="txtMoney" type="id" />
+    <item name="pagerSlider" type="id" />
+    <item name="imageSlider" type="id" />
+    <item name="lnDots" type="id" />
+</resources>

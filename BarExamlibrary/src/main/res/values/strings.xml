@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">VakilTest</string>
+    <string name="no_connection">بدون ارتباط</string>
+    <string name="time_out">Time Out</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="category">دسته بندی</string>
+    <string name="test_list">لیست آزمون ها</string>
+</resources>

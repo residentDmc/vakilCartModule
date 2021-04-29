@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">VakilTest</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_exam">Enter Exam</string>
+    <string name="base_url">Base Url</string>
+    <string name="base_url_image_and_video">Base Url Image And Video</string>
+    <string name="token">Token</string>
+    <string name="user_id">User Id</string>
+    <string name="base_url_value">https://academy.vesam24.ir/api/v1/</string>
+    <string name="base_url_image_and_video_value">https://academy.vesam24.ir/</string>
+    <string name="token_value">VMGpZYFX1REXYLutGthzQURdP5V4OoMnZ0hCecdcg0IAS7k5hn4AdqM5KiRh6IGRUY2eEeYevLBivkA8pDgXsWAbz2CP7zlLdrl6SrTIBHsovXrTCax95oWo0Z5sYldKQMB4sskxnKeuMH7MlT6XXM</string>
+    <string name="user_id_value">56a1c311-306c-4082-9a11-b91e7698ccbe</string>
+    <string name="quiz_id">Quiz Id</string>
+    <string name="four">5</string>
+    <string name="cloze_test">Cloze Test</string>
+    <string name="enter_test">Exam Test</string>
+</resources>
