@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.viewpager.widget.ViewPager
 import com.vesam.barexamlibrary.R
 import com.vesam.barexamlibrary.databinding.FragmentStartTestBinding
@@ -22,7 +23,7 @@ class StartTestFragment : Fragment() {
 
     private lateinit var binding: FragmentStartTestBinding
     private lateinit var runnable: Runnable
-    private val navController: NavController by inject()
+    private lateinit var navController: NavController
     private val adapterImageSlider: AdapterImageSlider by inject()
     private val handler = Handler()
 
@@ -44,9 +45,14 @@ class StartTestFragment : Fragment() {
     }
 
     private fun initAction() {
+        initNavController()
         initToolbar()
         initViewPagerSlider()
         initOnClick()
+    }
+
+    private fun initNavController() {
+        navController = Navigation.findNavController(AppQuiz.activity, R.id.my_nav_fragment)
     }
 
     private fun initOnClick() {

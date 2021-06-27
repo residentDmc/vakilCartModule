@@ -17,4 +17,10 @@
     <style name="TypeEditText" parent="ThemeOverlay.MaterialComponents.TextInputEditText">
         <item name="android:textSize">@dimen/text_size_14</item>
     </style>
+
+    <style name="roundedImageViewRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16%</item>
+    </style>
+
 </resources>

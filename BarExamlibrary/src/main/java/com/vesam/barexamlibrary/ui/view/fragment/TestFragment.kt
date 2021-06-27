@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
@@ -14,7 +15,6 @@ import com.vesam.barexamlibrary.R
 import com.vesam.barexamlibrary.data.model.Test
 import com.vesam.barexamlibrary.databinding.FragmentTestBinding
 import com.vesam.barexamlibrary.interfaces.OnClickListenerAny
-import com.vesam.barexamlibrary.ui.view.adapter.category_list.CategoryAdapter
 import com.vesam.barexamlibrary.ui.view.adapter.test_list.TestAdapter
 import com.vesam.barexamlibrary.utils.application.AppQuiz
 import org.koin.android.ext.android.inject
@@ -22,7 +22,7 @@ import org.koin.android.ext.android.inject
 class TestFragment : Fragment() {
 
     private lateinit var binding: FragmentTestBinding
-    private val navController: NavController by inject()
+    private lateinit var navController: NavController
     private val testAdapter: TestAdapter by inject()
 
     override fun onCreateView(
@@ -43,8 +43,13 @@ class TestFragment : Fragment() {
     }
 
     private fun initAction() {
+        initNavController()
         initToolbar()
         initAdapter()
+    }
+
+    private fun initNavController() {
+        navController = Navigation.findNavController(AppQuiz.activity, R.id.my_nav_fragment)
     }
 
     private fun initAdapter() {
@@ -52,7 +57,6 @@ class TestFragment : Fragment() {
             LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         binding.rcTest.setHasFixedSize(true)
         binding.rcTest.adapter = testAdapter
-        testAdapter.updateList(getList())
         testAdapter.setOnItemClickListener(object : OnClickListenerAny {
             override fun onClickListener(any: Any) = initItemClickListener(any)
         })

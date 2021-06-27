@@ -10,6 +10,7 @@ import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.viewpager.widget.ViewPager
 import com.vesam.barexamlibrary.R
 import com.vesam.barexamlibrary.databinding.FragmentPaymentBinding
@@ -21,7 +22,7 @@ import org.koin.android.ext.android.inject
 class PaymentFragment : Fragment() {
     private lateinit var binding: FragmentPaymentBinding
     private lateinit var runnable: Runnable
-    private val navController: NavController by inject()
+    private lateinit var navController: NavController
     private val adapterImageSlider: AdapterImageSlider by inject()
     private val handler = Handler()
 
@@ -43,9 +44,14 @@ class PaymentFragment : Fragment() {
     }
 
     private fun initAction() {
+        initNavController()
         initToolbar()
         initViewPagerSlider()
         initOnClick()
+    }
+
+    private fun initNavController() {
+        navController = Navigation.findNavController(AppQuiz.activity, R.id.my_nav_fragment)
     }
 
     private fun initOnClick() {

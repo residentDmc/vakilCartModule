@@ -100,6 +100,8 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@id/image"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
                 android:layout_width="@dimen/margin_84"
                 android:layout_height="@dimen/margin_84"/>
         </androidx.appcompat.widget.LinearLayoutCompat>

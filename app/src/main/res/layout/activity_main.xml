@@ -38,29 +38,6 @@
             android:layout_height="@dimen/margin_5" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@id/tlBaseUrlImageAndVideo"
-            style="@style/TextInputLayoutStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/base_url_image_and_video"
-            app:errorEnabled="true"
-            app:helperTextEnabled="true">
-
-            <com.google.android.material.textfield.TextInputEditText
-                style="@style/TypeEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:imeOptions="actionNext"
-                android:singleLine="true"
-                android:text="@string/base_url_image_and_video_value" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="@dimen/margin_5" />
-
-        <com.google.android.material.textfield.TextInputLayout
             android:id="@id/tlToken"
             style="@style/TextInputLayoutStyle"
             android:layout_width="match_parent"
@@ -99,30 +76,6 @@
                 android:imeOptions="actionNext"
                 android:singleLine="true"
                 android:text="@string/user_id_value" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="@dimen/margin_5" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@id/tlQuizId"
-            style="@style/TextInputLayoutStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/quiz_id"
-            app:errorEnabled="true"
-            app:helperTextEnabled="true">
-
-            <com.google.android.material.textfield.TextInputEditText
-                style="@style/TypeEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:imeOptions="actionNext"
-                android:inputType="number"
-                android:singleLine="true"
-                android:text="@string/four" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

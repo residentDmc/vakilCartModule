@@ -7,13 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.vesam.barexamlibrary.R
-import com.vesam.barexamlibrary.data.model.Test
+import com.vesam.barexamlibrary.data.model.response.get_category_list.Quizze
 import com.vesam.barexamlibrary.interfaces.OnClickListenerAny
+import com.vesam.barexamlibrary.utils.tools.GlideTools
 import java.util.*
 
-class TestAdapter(private val context: Context) : RecyclerView.Adapter<ViewHolderTest>() {
+class TestAdapter(private val context: Context, private val glideTools: GlideTools) :
+    RecyclerView.Adapter<ViewHolderTest>() {
 
-    private val list: ArrayList<Test> = ArrayList()
+    private val list: ArrayList<Quizze> = ArrayList()
     private lateinit var onClickListenerAny: OnClickListenerAny
 
     fun setOnItemClickListener(onClickListenerAny: OnClickListenerAny) {
@@ -30,18 +32,30 @@ class TestAdapter(private val context: Context) : RecyclerView.Adapter<ViewHolde
     override fun onBindViewHolder(holder: ViewHolderTest, position: Int) {
         val test = list[position]
         holder.txtTitle.text = test.title
-        holder.txtDescription.text = test.description
-        holder.txtQuestionCount.text = test.questionCount
-        holder.txtMoney.text = test.money
-        holder.image.setImageResource(test.imageId)
+        holder.txtDescription.text = test.categoryName
+        holder.txtQuestionCount.text =
+            "${test.questionCount} ${context.resources.getString(R.string.questions)}"
+        holder.txtMoney.text = initPrice(test.price)
+        glideTools.displaySliderImage(
+            holder.image,
+            test.slideImage,
+            R.drawable.shape_round_slider_place_holder,
+            R.drawable.shape_round_slider_place_holder
+        )
         holder.lnParent.setOnClickListener { onClickListenerAny.onClickListener(test) }
+    }
+
+    private fun initPrice(price: Int): String = when {
+        price > 0 -> "$price ${context.resources.getString(R.string.unit_money)}"
+        price == 0 -> context.resources.getString(R.string.free)
+        else -> context.resources.getString(R.string.paid)
     }
 
     override fun getItemCount(): Int = list.size
 
-    fun updateList(listTest: List<Test>) {
+    fun updateList(listQuizze: List<Quizze>) {
         list.clear()
-        list.addAll(listTest)
+        list.addAll(listQuizze)
         notifyDataSetChanged()
     }
 }

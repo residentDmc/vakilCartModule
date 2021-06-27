@@ -1,7 +1,9 @@
 package com.vesam.barexamlibrary.utils.tools
 
 import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.vesam.barexamlibrary.R
+import com.vesam.barexamlibrary.data.model.response.errorMessage.ResponseErrorMessageModel
 import com.vesam.barexamlibrary.utils.application.AppQuiz
 import retrofit2.HttpException
 import java.net.SocketTimeoutException
@@ -23,6 +25,14 @@ class ThrowableTools(private val networkTools: NetworkTools,private val gson: Gs
     }
 
     private fun initHttpException(throwable: Throwable): String {
-        return throwable.message!!
+        val responseBody = (throwable as HttpException).response()!!.errorBody()
+        return try {
+            val type = object : TypeToken<ResponseErrorMessageModel>() {}.type
+            val responseErrorResponse: ResponseErrorMessageModel? =
+                gson.fromJson(responseBody!!.charStream(), type)
+            return responseErrorResponse?.error?.message.toString()
+        } catch (e: Exception) {
+            throwable.message()
+        }
     }
 }

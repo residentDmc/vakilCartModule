@@ -22,7 +22,20 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.BarExamApplication"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:host="www.vakilkart.ir" />
+                <data android:scheme="https" />
+                <data android:pathPattern="/Android" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.vesam.barexamlibrary.ui.view.activity.FullScreenActivity"
+            android:theme="@style/Theme.BarExamApplication"
+            android:screenOrientation="landscape"/>
+
     </application>
 
 </manifest>
